@@ -8,7 +8,7 @@
 作業フォルダに移動後に、リポジトリからプロジェクトをクローンします。
 
 ```shell
-git clone リポジトリのURL .
+git clone https://github.com/kantas-spike/my-roulette .
 ```
 
 pyproject.tomlに定義されたパッケージを仮想環境(.venv)にインストールします。
