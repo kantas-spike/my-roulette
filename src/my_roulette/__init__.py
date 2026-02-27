@@ -71,6 +71,14 @@ def print_selected(num: int) -> None:
     sys.stdout.flush()
 
 
+def sleep(sec: float):
+    """time.sleepのラッパー
+
+    :param sec: スリープする秒数
+    """
+    time.sleep(sec)
+
+
 def show_spinner(start: int, end: int, spin_times: int) -> None:
     """
     指定されたスピン回数分のスピナーを表示する
@@ -82,7 +90,7 @@ def show_spinner(start: int, end: int, spin_times: int) -> None:
     for i in range(spin_times):
         picked = pick_number(start, end)
         print_with_spinner(picked, i)
-        time.sleep(SLEEP_SEC)
+        sleep(SLEEP_SEC)
 
 
 def parse_args() -> argparse.Namespace:
