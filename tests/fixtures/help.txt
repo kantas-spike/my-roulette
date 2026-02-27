@@ -1,0 +1,11 @@
+usage: my-roulette [-h] [-s START_NUM] [-e END_NUM] [-d SPIN_DURATION]
+
+指定された範囲の数値または文字列をランダムに表示する。
+
+options:
+  -h, --help            show this help message and exit
+  -s, --start START_NUM
+                        ランダムに表示する数値範囲の開始番号. (デフォルト値: 1)
+  -e, --end END_NUM     ランダムに表示する数値範囲の終了番号. (デフォルト値: 6)
+  -d, --spin-duration SPIN_DURATION
+                        ルーレットが回る秒数. (デフォルト値: 1.5)
