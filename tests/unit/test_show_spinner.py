@@ -10,7 +10,7 @@ class TestShowSpinner:
 
     @pytest.mark.parametrize("spin_count", [5, 0])
     def test_spins_correct_number_of_times(
-        self, spin_count, spy_pick_number, spy_print_with_spinner, spy_sleep
+        self, spin_count, spy_pick_number, spy_print_with_spinner, spy_time_sleep
     ):
         """指定回数だけスピンすること"""
 
@@ -24,13 +24,11 @@ class TestShowSpinner:
         # Assert
         assert spy_pick_number.call_count == spin_count
         assert spy_print_with_spinner.call_count == spin_count
-        assert spy_sleep.call_count == spin_count
+        assert spy_time_sleep.call_count == spin_count
 
-    def test_passes_correct_arguments_to_print_with_spinner(
-        self, spy_pick_number, spy_print_with_spinner, spy_sleep
+    def test_passes_correct_arguments(
+        self, spy_pick_number, spy_print_with_spinner, spy_time_sleep
     ):
-        """print_with_spinnerに正しい引数が渡されること"""
-
         # Arrange
         start_num = 1
         end_num = 6
@@ -46,5 +44,5 @@ class TestShowSpinner:
         assert 5 == spy_print_with_spinner.call_count
         assert [call(3, i) for i in range(5)] == spy_print_with_spinner.mock_calls
 
-        assert 5 == spy_sleep.call_count
-        assert [call(SLEEP_SEC)] * 5 == spy_sleep.mock_calls
+        assert 5 == spy_time_sleep.call_count
+        assert [call(SLEEP_SEC)] * 5 == spy_time_sleep.mock_calls

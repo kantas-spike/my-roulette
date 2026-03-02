@@ -1,7 +1,7 @@
 import argparse
 import sys
 from random import randint
-import time
+from time import sleep
 from math import ceil
 
 # デフォルト設定値
@@ -69,14 +69,6 @@ def print_selected(num: int) -> None:
     sys.stdout.write(f"{num}")
     sys.stdout.write("\n")
     sys.stdout.flush()
-
-
-def sleep(sec: float):
-    """time.sleepのラッパー
-
-    :param sec: スリープする秒数
-    """
-    time.sleep(sec)
 
 
 def show_spinner(start: int, end: int, spin_times: int) -> None:
